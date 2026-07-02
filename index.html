@@ -513,7 +513,7 @@
               <source src="assets/demo-matlab-verifier.mp4" type="video/mp4">
             </video>
           </div>
-          <p class="caption">A browser extension sends the selected claim to a local helper, MATLAB verifies it, and the result returns in the workflow.</p>
+          <p class="caption">A browser extension sends the selected claim to a local MATLAB listener, MATLAB routes and verifies it, and the result returns in the workflow.</p>
         </div>
       </div>
     </section>
@@ -582,7 +582,7 @@
         <p class="eyebrow" style="color: var(--mw-blue);">Examples</p>
         <h2>What this looks like.</h2>
         <div class="section-copy">
-          <p>MATLAB Verify is browser-native. Users do not have to copy an answer into MATLAB, write a script, or decide which function to call. The extension reads the selected claim, the helper normalizes it, and MATLAB returns a verdict that appears directly next to the AI response.</p>
+          <p>MATLAB Verify is browser-native. Users do not have to copy an answer into MATLAB, write a script, or decide which function to call. The extension reads the selected claim, MATLAB normalizes and routes it locally, and the verdict appears directly next to the AI response.</p>
           <p>This makes the product feel like a math and engineering equivalent of citation-checking tools: it does not generate the answer, it checks the claim.</p>
         </div>
         <div class="media-grid">
@@ -630,32 +630,32 @@
     <section class="section flow">
       <div class="inner">
         <p class="eyebrow">How It Works</p>
-        <h2>A local verification loop, not another chatbot guess.</h2>
-        <p class="quiet">The assistant explains. MATLAB verifies. The architecture keeps the interaction lightweight for the user while preserving a real computation engine behind the verdict.</p>
+        <h2>A local MATLAB verification loop, not another chatbot guess.</h2>
+        <p class="quiet">The assistant explains. MATLAB verifies. The architecture keeps the interaction lightweight for the user while removing the extra Python helper layer from the verification path.</p>
         <div class="flow-grid">
           <div class="flow-step">
             <span class="num">1</span>
             <h3>Extension</h3>
-            <p class="quiet">Captures highlighted text and surrounding context from the AI chat page.</p>
+            <p class="quiet">Captures highlighted text and surrounding context from the AI chat page, then sends a local request.</p>
           </div>
           <div class="flow-step">
             <span class="num">2</span>
-            <h3>Python helper</h3>
-            <p class="quiet">Normalizes copied math, validates claim shape, and chooses the best verifier.</p>
+            <h3>MATLAB listener</h3>
+            <p class="quiet">Receives the browser request on localhost and hands the selected claim to the MATLAB router.</p>
           </div>
           <div class="flow-step">
             <span class="num">3</span>
-            <h3>MATLAB</h3>
-            <p class="quiet">Runs symbolic, numeric, finance, control, units, or statistics verification and returns JSON.</p>
+            <h3>Router</h3>
+            <p class="quiet">Normalizes copied math, validates claim shape, and chooses symbolic, units, finance, control, statistics, calculus, or solution checking.</p>
           </div>
           <div class="flow-step">
             <span class="num">4</span>
-            <h3>Result</h3>
-            <p class="quiet">Shows a compact verdict, normalized claim, and engine details in the workflow.</p>
+            <h3>Verifier engines</h3>
+            <p class="quiet">MATLAB runs the selected verifier and returns a compact verdict, normalized claim, and engine details as JSON.</p>
           </div>
         </div>
         <div class="note-block">
-          Instead of asking the user to know which MATLAB function proves a claim, the helper decides whether the highlighted text is symbolic, derivative, units, finance, control, statistics, integral, limit, or arithmetic.
+          The current stack is browser extension plus MATLAB: no Python helper. MATLAB owns the local listener, notation normalization, routing, and the verifier functions that check symbolic, derivative, units, finance, control, statistics, integral, limit, equation-solution, or arithmetic claims.
         </div>
       </div>
     </section>
