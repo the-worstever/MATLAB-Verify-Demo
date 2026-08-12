@@ -179,19 +179,19 @@
 
     .mode-grid {
       display: grid;
-      grid-template-columns: minmax(280px, 0.72fr) minmax(520px, 1.28fr);
-      gap: 34px;
+      grid-template-columns: minmax(300px, 0.86fr) minmax(500px, 1.14fr);
+      gap: 30px;
       align-items: start;
     }
 
     .mode-list {
       display: grid;
-      gap: 14px;
-      margin-top: 22px;
+      gap: 12px;
+      margin-top: 18px;
     }
 
     .mode-item {
-      padding: 18px 20px;
+      padding: 16px 18px;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: var(--white);
@@ -212,25 +212,29 @@
     }
 
     .extension-shot {
-      margin-top: 16px;
+      display: grid;
+      grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+      align-items: center;
+      gap: 18px;
+      margin-top: 22px;
+      padding: 14px;
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--white);
-      box-shadow: 0 12px 32px rgba(16, 34, 48, 0.08);
+      background: #fbfcfd;
     }
 
     .extension-shot img {
+      border: 1px solid var(--line);
+      border-radius: 8px;
       background: #edf5fb;
     }
 
     .extension-shot p {
       margin: 0;
-      padding: 12px 14px;
-      border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
+      font-size: 14px;
+      line-height: 1.45;
     }
 
     .problem-grid {
@@ -515,6 +519,7 @@
       .hero-grid,
       .problem-grid,
       .mode-grid,
+      .extension-shot,
       .audience-grid {
         grid-template-columns: 1fr;
       }
@@ -591,10 +596,6 @@
               <span>A passive beta version is available at the moment. When enabled, it scans ChatGPT assistant responses and adds verdict badges to likely verifiable claims.</span>
             </div>
           </div>
-          <div class="extension-shot">
-            <img src="assets/extension-options.png" alt="MATLAB Verify extension popup with passive mode enabled">
-            <p>Passive mode is enabled from the extension popup. Default verification remains available through the right-click workflow.</p>
-          </div>
         </div>
         <div>
           <div class="media-frame">
@@ -604,6 +605,10 @@
           </div>
           <p class="caption">Passive beta mode can annotate generated answers without requiring the user to select each claim manually.</p>
         </div>
+      </div>
+      <div class="inner extension-shot">
+        <img src="assets/extension-options.png" alt="MATLAB Verify extension popup with passive mode enabled">
+        <p>Passive mode is enabled from the extension popup. Default verification remains available through the right-click workflow.</p>
       </div>
     </section>
 
