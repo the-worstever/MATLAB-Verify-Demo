@@ -179,8 +179,8 @@
 
     .mode-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
-      gap: 28px;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(520px, 1.28fr);
+      gap: 34px;
       align-items: start;
     }
 
@@ -209,21 +209,6 @@
       color: var(--muted);
       font-size: 14px;
       line-height: 1.45;
-    }
-
-    .beta-label {
-      display: inline-flex;
-      align-items: center;
-      margin-left: 8px;
-      padding: 3px 7px;
-      border: 1px solid #f2d6b4;
-      border-radius: 999px;
-      background: #fff4e8;
-      color: #8a4b10;
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      vertical-align: middle;
     }
 
     .problem-grid {
@@ -577,10 +562,10 @@
           <div class="mode-list">
             <div class="mode-item">
               <strong>Default verification</strong>
-              <span>Use the context menu or keyboard shortcut when you want MATLAB to check a specific highlighted claim.</span>
+              <span>Highlight a claim, right-click, and choose MATLAB Verify when you want MATLAB to check a specific answer.</span>
             </div>
             <div class="mode-item">
-              <strong>Passive verification <span class="beta-label">Beta</span></strong>
+              <strong>Passive verification</strong>
               <span>A passive beta version is available at the moment. When enabled, it scans ChatGPT assistant responses and adds verdict badges to likely verifiable claims.</span>
             </div>
           </div>
