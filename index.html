@@ -211,6 +211,28 @@
       line-height: 1.45;
     }
 
+    .extension-shot {
+      margin-top: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 12px 32px rgba(16, 34, 48, 0.08);
+    }
+
+    .extension-shot img {
+      background: #edf5fb;
+    }
+
+    .extension-shot p {
+      margin: 0;
+      padding: 12px 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
     .problem-grid {
       display: grid;
       grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
@@ -568,6 +590,10 @@
               <strong>Passive verification</strong>
               <span>A passive beta version is available at the moment. When enabled, it scans ChatGPT assistant responses and adds verdict badges to likely verifiable claims.</span>
             </div>
+          </div>
+          <div class="extension-shot">
+            <img src="assets/extension-options.png" alt="MATLAB Verify extension popup with passive mode enabled">
+            <p>Passive mode is enabled from the extension popup. Default verification remains available through the right-click workflow.</p>
           </div>
         </div>
         <div>
